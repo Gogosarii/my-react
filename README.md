@@ -1,3 +1,12 @@
+## DO NOT USE NPM to add packages! Use yarn instead!
+
+
+### `yarn` 
+to auto install packages from package.json
+
+### `yarn add "package"` 
+to add new package
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
