@@ -18,8 +18,23 @@
   color: white;
 }
 
+.generate-button{
+  background: #eb9633;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px 5px 5px 5px;
+}
+
+.generate-button:hover{
+  background: #eba03f;
+  border: 0;
+  border-radius: 3px;
+  padding: 5px 5px 5px 5px;
+}
+
 .App-link {
   color: #61dafb;
+  top: 33%;
 }
 
 @keyframes App-logo-spin {

@@ -1,27 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      text: "Hello world"
+    };
+  }
+
+  componentDidMount() {
+    // For initial data
+    this.fetchData();
+  }
+
+  fetchData = () => {
+    axios.get(`https://hello-rails-sc.herokuapp.com/api/example/index`)
+    .then(res => {
+      this.setState({text:res.data});
+    })
+  };
+
   render() {
-    return (
+    const onClickFct = this.fetchData.bind(this);
+    return this.state.text ? (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <div>{this.state.text}</div>
+          <button className="generate-button" onClick={onClickFct}>Generate a new random text</button>
         </header>
       </div>
-    );
+    ) : "";
   }
 }
 
